@@ -1,0 +1,61 @@
+<div class="fullcontainer">
+    <h4 class="taskboard">Task Board</h4>
+   <div class="search">
+    <input type="text" [(ngModel)]="searchKeyword" placeholder="Search tasks..." (input)="onSearchChange()">
+    <select [(ngModel)]="selectedPriority" (change)="onSearchChange()">
+      <option value="all">Select Priority</option>
+      <option value="pending">Pending</option>
+      <option value="completed">Completed</option>
+    </select>
+        <button (click)="toggleAddForm()" class="btn btn-primary" id="add-task">Add Task</button>
+        <button (click)="logOut()" class="btn btn-primary" id="logout">Logout</button>
+        </div>
+
+  <div class="card-container">
+    <div class="card" *ngFor="let task of filteredTasks" [ngClass]="task.Priority" >
+      <div class="card-header">
+        <div *ngIf="!task.editMode; else editModeTitle" [innerHTML]="highlightSearch(task.Title)"></div>
+        <ng-template #editModeTitle >
+            <span><input [(ngModel)]="task.updatedTitle" placeholder="Title"></span>
+        </ng-template>
+      </div>
+      <div class="card-content">
+        <div *ngIf="!task.editMode; else editModeDescription" [innerHTML]="highlightSearch(task.Description)"></div>
+        <ng-template #editModeDescription >
+          <input [(ngModel)]="task.updatedDescription" placeholder="Description">
+        </ng-template>
+        <div *ngIf="!task.editMode; else editModeDueDate">
+          <p class="card-text">Due Date: {{ task.DueDate }}</p>
+        </div>
+        <ng-template #editModeDueDate>
+          <input [(ngModel)]="task.updatedDueDate" type="date">
+        </ng-template>
+        <div *ngIf="!task.editMode; else editModePriority">
+          <p class="card-text" [ngClass]="{ 'completed-task': task.Priority === 'Completed', 'pending-task': task.Priority === 'Pending' }">Priority: {{ task.Priority }}</p>
+        </div>
+        <ng-template #editModePriority>
+          <select [(ngModel)]="task.updatedPriority">
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </ng-template>
+      </div>
+      <div class="card-footer">
+        <button *ngIf="!task.editMode" class="btn btn-primary mr-2" (click)="toggleEditMode(task)">Edit</button>
+        <button *ngIf="task.editMode" class="btn btn-primary mr-2" (click)="saveTask(task)">Save</button>
+        <button *ngIf="task.editMode" class="btn btn-primary mr-2" (click)="toggleEditMode(task)">Cancel</button>
+        <button (click)="deleteTask(task._id)" class="btn btn-danger ml-2">Delete</button>
+      </div>
+    </div>
+    <div class="add-task-form" *ngIf="showAddForm">
+        <input [(ngModel)]="newTask.Title" placeholder="Title">
+        <textarea [(ngModel)]="newTask.Description" placeholder="Description"></textarea>
+        <input [(ngModel)]="newTask.DueDate" type="date" placeholder="Due Date">
+        <select [(ngModel)]="newTask.Priority" >
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
+        <button (click)="addTask()">Add</button>
+      </div>
+  </div>
+</div>

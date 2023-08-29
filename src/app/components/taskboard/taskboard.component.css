@@ -1,0 +1,158 @@
+.fullcontainer {
+    background-color: #f5f1f1e5;
+    height: 100vh;
+  }
+  
+  .taskboard{
+    margin-left: 600px;
+    font-style: italic;
+    color: #7a7878;
+  }
+  .search{
+    height: 50px;
+  }
+  .search input{
+    height: 50px;
+    width: 980px;
+    border-radius: 5px;
+    border: 1px solid rgb(225, 221, 221);
+  }
+  .search select{
+    border-radius: 5px;
+    height: 50px;
+    width: 300px;
+    border: none;
+    margin-left: 10px;
+  }
+ .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 280px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-top: 20px;
+}
+
+.card.pending {
+  background-color: #f0e8dd; 
+}
+.card.completed {
+    background-color: #bea91f; 
+  }
+ 
+
+.card-header {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-content {
+  margin-bottom: 10px;
+}
+
+.card-actions button {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.card-actions button:last-child {
+  margin-right: 0;
+}
+
+.highlight {
+  background-color: yellow;
+}
+#add-task{
+    margin-left: 20px;
+    height: 50px;
+    width: 90px;
+}
+#logout{
+    margin-left: 10px;
+    height: 50px;
+    width: 70px;
+}
+.add-task-form {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+  }
+  
+  .add-task-form input,
+  .add-task-form textarea,
+  .add-task-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    border: none;
+  }
+  
+  .add-task-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+.card-footer .btn {
+    margin-right: 10px;
+  }
+  
+  .card-footer .btn:last-child {
+    margin-right: 0;
+  }
+  .card-text{
+    border: none;
+  }
+
+.card.editing {
+    border: none;  
+    box-shadow: none;  
+  }
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  h4.taskboard {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .card-header,
+  .card-content p.card-text {
+    font-size: 16px;
+  }
+  input[type="text"],
+  textarea,
+  input[type="date"],
+  select {
+    font-size: 14px;
+  }
+  .btn {
+    font-size: 14px;
+  }
+  .completed-task {
+    color: green;  
+    font-size: bold;
+  }
+  
+  .pending-task {
+    color: red; /* Dark red text for pending tasks */
+  }
+  
+
+  
