@@ -1,27 +1,28 @@
-# FrontendTaskcreation
+ # Task-Board
+Task-Board(MEAN)
+#starting the project
+1. Create a folder
+2. Open the command prompt for the created folder
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+#Backend Steps
+1. Clone the backend repository using the command->git clone https://github.com/mythrikm123/Task-Board-Backend.git
+2. Install the packages using the command -> npm init
+3. Run the Backend application using the command -> nodemon
 
-## Development server
+#Frontend Steps
+1. Clone the Frontend repository using the command->git clone https://github.com/mythrikm123/Task-Board-Frontend.git
+2. Install the packages using the command -> npm init
+3. Run the Frontend application using the command -> ng s -o
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#OUTPUT
+1. see the output in the: https://localhost:4200
+2. Login with the creadentials
+3. If you are not registered the account -> go to create account
+4. after creating the account login with the same credentials
+5. after successfull login able to see the dashboard
+6. If you need to edit click edit button after editing click on save button
+7. If you need to add the task click delete button
+8. If you need to add task button click add task button
+9. We can search by using the title and description
+10. We need to sort the task by completed or pending we can select priority search
+11. If we click logout button logout successfully and login again to perform the task again
